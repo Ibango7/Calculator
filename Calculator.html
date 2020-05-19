@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+                background-color:#ffe6e6;
+            }
+            
+            #calc-container {
+                margin:auto;
+                width: 50%; 
+            }
+
+           .title {
+                background-color: #00004d; 
+                height: 50px;
+            }
+            
+             .title h2 {
+                color: white; 
+                padding:10px;
+            }
+            
+            form {
+                background-color: #00004d;
+                width:200px;
+                border:1px solid red;
+                padding:5px;
+                padding-left: 5px;
+                position:relative;
+                left:35%;
+            }
+            
+            input[type=text] {
+                width:100%;
+                border: 1px solid red;
+                color: black;
+                border-radius: 4px;
+                height:50px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            
+            input[type=button] {
+                width:42px;
+                height:40px;
+                font-weight: bold;
+                font-size: 15px;
+                padding-left:-10px;
+                border: 0px none #99004d;
+                margin:1px;            
+            }
+            
+              input[type=button]:hover {
+                background-color: #99004d;
+                border-radius: 2px;
+                color:white;
+            }
+            
+           input[class^="equals"] { 
+                width: 94%;
+                height:40px;
+                font-weight: bold;
+                font-size: 15px;
+                padding-left:-10px;
+                border: 0px none #99004d;
+                margin:1px;
+            }
+
+            .equalsBtn:hover {
+                background-color: #99004d;
+                border-radius: 2px;
+                color:white;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+
+        <div class="title"><h2>Simple calculator</h2></div>
+        <p></p>
+        
+        <div id="calc-container">
+            <form>
+                <input  id="Textbox" type="text" ><p></p>
+                <input type="button" id="id1"  value="("> 
+                <input type="button" id="id2" value=")">
+                <input type="button" id="id3" value="%">
+                <input type="button" id="id4" value="AC"><br>
+                <input type="button" id="id5" value="0"> 
+                <input type="button"  id="id6" value="1">  
+                <input type="button" id="id7"  value="2">
+                <input type="button" id="id8" value="3"><br>
+                <input type="button" id="id9"  value="4"> 
+                <input type="button" id="id10" value="5">
+                <input type="button" id="id11" value="6">
+                <input type="button" id="id12" value="7"><br>
+                <input type="button" id="id13" value="8">
+                <input type="button" id="id14" value="9">
+                <input type="button" id="id15" value=".">
+                <input type="button" id="id16" value="*"><br>
+                <input type="button" id="id17" value="/">
+                <input type="button" id="id18" value="+">
+                <input type="button" id="id19" value="-">
+                <input type="button" id="id20" value="^"><br>
+                <input type ="button" id ="result" class="equalsBtn" onclick ="answer()" value="="> 
+            </form>
+        
+        </div>
+        
+        <script type="text/javascript">
+           var Textbox = document.getElementById("Textbox");
+           var btn = []; // Array for buttons
+            
+            for(var i =0; i<20;i++){
+                // get each button by an array
+             btn[i] = document.getElementById("id"+(i+1)); 
+            }
+            
+            // function gets value of user click
+            function clicked(a) {
+              if(a=="AC") {
+                     Textbox.value =""; // erase value in  textbox
+                } else { 
+                Textbox.value+=a;
+                }
+            }
+            
+            // function computes expression in textbox
+            function answer() {
+                var exp = Textbox.value;
+
+                if(exp) {
+                    Textbox.value = eval(exp);
+                }      
+            }
+            
+            // get value of button when clicked
+            btn[0].addEventListener("click", function(){clicked(btn[0].value)});
+            btn[1].addEventListener("click", function(){clicked(btn[1].value)});
+            btn[2].addEventListener("click", function(){clicked(btn[2].value)});
+            btn[3].addEventListener("click", function(){clicked(btn[3].value)});
+            btn[4].addEventListener("click", function(){clicked(btn[4].value)});
+            btn[5].addEventListener("click", function(){clicked(btn[5].value)});
+            btn[6].addEventListener("click", function(){clicked(btn[6].value)});
+            btn[7].addEventListener("click", function(){clicked(btn[7].value)});
+            btn[8].addEventListener("click", function(){clicked(btn[8].value)});
+            btn[9].addEventListener("click", function(){clicked(btn[9].value)});
+            btn[10].addEventListener("click", function(){clicked(btn[10].value)});
+            btn[11].addEventListener("click", function(){clicked(btn[11].value)});
+            btn[12].addEventListener("click", function(){clicked(btn[12].value)});
+            btn[13].addEventListener("click", function(){clicked(btn[13].value)});  
+            btn[14].addEventListener("click", function(){clicked(btn[14].value)});
+            btn[15].addEventListener("click", function(){clicked(btn[15].value)});
+            btn[16].addEventListener("click", function(){clicked(btn[16].value)});
+            btn[17].addEventListener("click", function(){clicked(btn[17].value)});
+            btn[18].addEventListener("click", function(){clicked(btn[18].value)});
+            btn[19].addEventListener("click", function(){clicked(btn[19].value)});
+        </script>
+    
+    </body>
+    
+</html>
